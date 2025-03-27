@@ -1,0 +1,185 @@
+:root {
+    --deep-blue: #0a192f;
+    --cyber-cyan: #64ffda;
+    --tech-gray: #8892b0;
+    --terminal-green: #4AF626;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Code', monospace;
+}
+
+body {
+    background: var(--deep-blue);
+    color: var(--tech-gray);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.profile-header {
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid var(--cyber-cyan);
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+    margin: 0 auto 2rem;
+    transition: transform 0.3s;
+}
+
+.profile-pic:hover {
+    transform: rotate(5deg) scale(1.1);
+}
+
+.section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.section h2 {
+    color: var(--cyber-cyan);
+    margin-bottom: 3rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: rgba(10, 25, 47, 0.9);
+    border: 1px solid var(--cyber-cyan);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(100, 255, 218, 0.2);
+}
+
+/* Sección de Tecnologías */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.tech-icon-container {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    background: rgba(10, 25, 47, 0.9);
+    border-radius: 15px;
+    border: 1px solid var(--cyber-cyan);
+}
+
+.tech-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.tech-label {
+    color: var(--cyber-cyan);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+.tech-item:hover .tech-icon {
+    transform: scale(1.15);
+}
+
+.tech-item:hover .tech-icon-container {
+    box-shadow: 0 0 15px rgba(100, 255, 218, 0.3);
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.cert-card {
+    background: rgba(10, 25, 47, 0.9);
+    border: 1px solid var(--cyber-cyan);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.cert-badge {
+    width: 60px;
+    height: 60px;
+    background: var(--cyber-cyan);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.project-link {
+    color: var(--cyber-cyan);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--cyber-cyan);
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.project-link:hover {
+    background: var(--cyber-cyan);
+    color: var(--deep-blue);
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: var(--cyber-cyan);
+}
+
+@media (max-width: 768px) {
+    .profile-header {
+        padding: 2rem 1rem;
+    }
+    
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .section {
+        margin: 2rem auto;
+    }
+}
