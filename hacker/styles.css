@@ -1,0 +1,211 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', monospace;
+  background: #101820;
+  color: #00ff90;
+  overflow-x: hidden;
+  position: relative;
+  transition: background 0.7s cubic-bezier(.77,0,.18,1), color 0.7s cubic-bezier(.77,0,.18,1);
+}
+
+.hacker-bg {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  background: repeating-linear-gradient(135deg, #0f0 0 1px, transparent 1px 40px), repeating-linear-gradient(-135deg, #0f0 0 1px, transparent 1px 40px);
+  opacity: 0.07;
+  pointer-events: none;
+  animation: bg-move 12s linear infinite;
+}
+@keyframes bg-move {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 80px 80px, -80px -80px; }
+}
+
+.hacker-header {
+  text-align: center;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  z-index: 2;
+  position: relative;
+}
+.hacker-header h1 {
+  font-size: 2.7rem;
+  color: #00ff90;
+  text-shadow: 0 0 12px #0f0, 0 0 2px #fff;
+  margin-bottom: 0.3rem;
+  letter-spacing: 2px;
+  animation: flicker 2.5s infinite alternate;
+}
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  45% { opacity: 0.85; }
+  50% { opacity: 0.7; }
+  55% { opacity: 0.85; }
+}
+.hacker-header p {
+  color: #0ff;
+  font-size: 1.1rem;
+  margin: 0;
+}
+.hacker-header a {
+  color: #0ff;
+  text-decoration: underline;
+}
+
+.search-bar-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  z-index: 2;
+  position: relative;
+}
+#search-input, #language-filter, #stars-filter {
+  background: #181f2a;
+  color: #00ff90;
+  border: 1.5px solid #00ff90;
+  border-radius: 8px;
+  padding: 0.7rem 1.1rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+}
+#search-input:focus, #language-filter:focus, #stars-filter:focus {
+  border-color: #0ff;
+  box-shadow: 0 0 8px #0ff3;
+}
+
+.hacker-projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.5rem;
+  z-index: 2;
+  position: relative;
+  padding-bottom: 2rem;
+}
+.hacker-repo {
+  background: rgba(20, 30, 40, 0.97);
+  border: 2px solid #00ff90;
+  border-radius: 14px;
+  padding: 1.2rem 1.1rem 1rem 1.1rem;
+  color: #00ff90;
+  box-shadow: 0 2px 16px #0f03;
+  transition: transform 0.18s, box-shadow 0.18s, border 0.18s, background 0.4s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+}
+.hacker-repo:hover {
+  transform: translateY(-7px) scale(1.03);
+  box-shadow: 0 8px 32px #0f08;
+  border-color: #0ff;
+  background: #181f2a;
+}
+.hacker-repo a {
+  color: #00ff90;
+  font-weight: bold;
+  font-size: 1.18rem;
+  text-decoration: underline;
+  word-break: break-all;
+}
+.hacker-stars {
+  float: right;
+  font-size: 1.05rem;
+  color: #0ff;
+  font-family: inherit;
+  margin-left: 0.7rem;
+}
+.hacker-repo p {
+  margin: 0.7rem 0 0 0;
+  color: #0ff;
+  font-size: 0.99rem;
+  word-break: break-word;
+}
+footer {
+  text-align: center;
+  color: #00ff90;
+  background: transparent;
+  margin-top: 2.5rem;
+  z-index: 2;
+  position: relative;
+}
+#back-btn {
+  margin-top: 1.2rem;
+  background: #181f2a;
+  color: #00ff90;
+  border: 1.5px solid #00ff90;
+  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s, border 0.2s;
+}
+#back-btn:hover {
+  background: #00ff90;
+  color: #181f2a;
+  border-color: #0ff;
+}
+
+/* Transición de entrada */
+body.hacker-transition {
+  animation: hacker-fadein 1.2s cubic-bezier(.77,0,.18,1);
+}
+@keyframes hacker-fadein {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 700px) {
+  .hacker-header h1 {
+    font-size: 2rem;
+  }
+  .hacker-projects {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .search-bar-container {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+}
+
+.hacker-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem 0 2rem 0;
+  z-index: 2;
+  position: relative;
+  color: #0ff;
+  font-size: 1.1rem;
+  min-height: 120px;
+}
+.loader-animation {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #0ff;
+  border-top: 4px solid #101820;
+  border-radius: 50%;
+  animation: spin 1.1s linear infinite;
+  margin-bottom: 1.1rem;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} 

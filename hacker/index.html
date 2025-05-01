@@ -1,1 +1,38 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hacker Mode | Santitub</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="hacker-bg"></div>
+  <header class="hacker-header">
+    <h1>💻 Hacker Mode</h1>
+    <p>Todos los proyectos de <a href="https://github.com/Santitub" target="_blank">Santitub</a></p>
+  </header>
+  <main>
+    <div class="search-bar-container">
+      <input type="text" id="search-input" placeholder="Buscar proyecto...">
+      <select id="language-filter">
+        <option value="">Todos los lenguajes</option>
+      </select>
+      <select id="stars-filter">
+        <option value="desc">Más estrellas ⭐</option>
+        <option value="asc">Menos estrellas ⭐</option>
+      </select>
+    </div>
+    <div class="hacker-loader" id="hacker-loader">
+      <div class="loader-animation"></div>
+      <span>Cargando proyectos...</span>
+    </div>
+    <div class="hacker-projects" style="display:none"></div>
+  </main>
+  <footer>
+    <p>&copy; 2025 Santitub | Hacker Mode</p>
+    <button id="back-btn">Volver al portafolio</button>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html> 
